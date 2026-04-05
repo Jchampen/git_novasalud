@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
+    {% for profesional in get_profesionales %}
+        {{ profesional.nombre }}
+    {% endfor %}
     <header class="hero">
         <div class="container">
             <h1>Novasalud</h1>
@@ -16,8 +19,27 @@
         </div>
     </header>
 
-    <main class="content">
-
+    <main>
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Foto</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Documento</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for profesional in get_profesionales %}
+    <tr>
+      <th scope="row">{{ profesional.id }}</th>
+      <td><img src="{{ profesional.foto.url }}" alt="Foto de {{ profesional.nombre }}" width="100"></td>
+      <td>{{ profesional.nombre }}</td>
+      <td>{{ profesional.documento }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
     </main>
 
     <footer class="footer">
