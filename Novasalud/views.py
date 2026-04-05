@@ -6,3 +6,7 @@ def home(request):
 
 def servicios(request):
     return render(request, "servicios.html")
+
+
+def profesionales(request):
+    return render(request, "templates/profesionales/profesionaleslist.html")

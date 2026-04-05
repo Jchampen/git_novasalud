@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novasalud | Servicios de Salud a Domicilio</title>
-    <link rel="stylesheet" href="/static/css/home.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}?v=20260405">
 </head>
 <body>
     <header class="hero">
         <div class="container">
             <h1>Novasalud</h1>
             <p>Cuidamos de ti en casa con atencion profesional, humana y oportuna.</p>
-            <a class="btn-servicios" href="/templates/servicios.html">Ver servicios</a>
+            <a class="btn-servicios" href="/servicios/">Ver servicios</a>
+            <a class="btn-profesionales" href="/profesionales/profesionaleslist/">Ver profesionales</a>
         </div>
     </header>
 
