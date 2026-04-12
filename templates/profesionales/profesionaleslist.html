@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novasalud | Profesionales</title>
     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </head>
 <body>
     {% for profesional in get_profesionales %}
@@ -36,6 +38,8 @@
       <td><img src="{{ profesional.foto.url }}" alt="Foto de {{ profesional.nombre }}" width="100"></td>
       <td>{{ profesional.nombre }}</td>
       <td>{{ profesional.documento }}</td>
+      <td><a href="{% url 'editar_profesional' profesional.id %}" class="btn btn-warning">Editar</a></td>
+        <td><a href="{% url 'eliminar_profesional' profesional.id %}" class="btn btn-danger">Eliminar</a></td>
     </tr>
     {% endfor %}
   </tbody>
